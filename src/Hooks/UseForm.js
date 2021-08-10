@@ -6,6 +6,11 @@ const types = {
       /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i,
     message: 'Preencha um email válido',
   },
+  password: {
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+    message:
+      'A senha precisa conter pelo menos 1 caractére maiúsculo, 1 minúsculo e 1 digito, e deve ter no mínimo 8 caractéres',
+  },
 };
 
 const UseForm = (type) => {
@@ -13,9 +18,9 @@ const UseForm = (type) => {
   const [error, setError] = React.useState(null);
 
   function validate(value) {
-    if (!type) {
-      return true;
-    }
+    // if (!type) {
+    //   return true;
+    // }
     if (value.length === 0) {
       setError('Preencha um valor.');
       return false;
