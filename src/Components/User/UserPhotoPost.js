@@ -20,7 +20,7 @@ const UserPhotoPost = () => {
 
   React.useEffect(() => {
     if (data) {
-      navigate('/conta');
+      navigate('..');
     }
   }, [data, navigate]);
 
